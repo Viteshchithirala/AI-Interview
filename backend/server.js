@@ -32,7 +32,7 @@ app.post('/upload-pdf', upload.single('file'), async (req, res) => {
         const response = await axios.post(
             'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent',
             {
-                contents: [{ parts: [{ text: `generate 5 interview questions based on the skills in resume and start with questions directly, dont give any unnecessary text except questions:\n${extractedText}` }] }]
+                contents: [{ parts: [{ text: `generate 10 interview questions based on the skills in resume and start with questions directly, dont give any unnecessary text except questions:\n${extractedText}` }] }]
             },
             { headers: { 'Content-Type': 'application/json' }, params: { key: process.env.GEMINI_API_KEY } }
         );
